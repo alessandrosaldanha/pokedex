@@ -21,7 +21,7 @@ const Footer = () => {
               className="text-white fw-bold mb-2"
               style={{ letterSpacing: "1px" }}
             >
-              Pokédex <span style={{ color: "#E3350D" }}>App</span>
+              Pokédex <span style={{ color: "#E3350D" }}>Web</span>
             </h5>
             <p className="small mb-0" style={{ fontSize: "0.9rem" }}>
               Uma aplicação web construída com React, TypeScript e Bootstrap,
