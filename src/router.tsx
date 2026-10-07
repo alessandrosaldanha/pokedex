@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/details",
+        path: "/details/:name",
         element: <Detalhes />,
       },
     ],
