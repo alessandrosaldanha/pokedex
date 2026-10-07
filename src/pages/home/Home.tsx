@@ -167,9 +167,15 @@ const Home = () => {
           <Spinner animation="border" variant="primary" />
         </div>
       ) : (
-        <Row className="g-4">
+        <Row className="g-2 g-sm-3">
           {filteredPokemons.map((item: PokemonDataItem) => (
-            <Col key={item.id} xs={12} sm={6} md={4} lg={3}>
+            /* 
+      - xs={6}: 2 cards por linha por padrão em celulares (50% da largura cada)
+      - sm={4}: 3 cards por linha em telas pequenas/médias (tablets)
+      - md={3}: 4 cards por linha em telas médias/desktops
+      - lg={2}: 6 cards por linha em telas grandes
+    */
+            <Col key={item.id} xs={6} sm={4} md={3} lg={2}>
               <PokemonItem
                 id={item.id}
                 src={item.src}
