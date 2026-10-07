@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"; // 1. Importe o useState
+import "./App.css";
+import Home from "./pages/home/Home";
+import Button from "./components/buttons/Buttons";
 
 function App() {
+  // 2. Crie um estado para guardar a mensagem de erro
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleClick = () => {
+    alert("Botão clicado");
+    setErrorMessage(""); // Limpa o erro se o usuário clicar no outro botão
+  };
+
+  const handleDesativou = () => {
+    // 3. Atualize o estado com a mensagem que deseja exibir
+    setErrorMessage("Ocorreu um erro ao desativar!");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Pokemon List <Home />
+      <Button label="Enviar" onClick={handleClick} variant="primary" />
+      <Button label="Desativar" onClick={handleDesativou} variant="secondary" />
+      {/* 4. Renderize a mensagem condicionalmente na tela */}
+      {errorMessage && (
+        <div style={{ color: "red", marginTop: "10px", fontWeight: "bold" }}>
+          {errorMessage}
+        </div>
+      )}
     </div>
   );
 }
